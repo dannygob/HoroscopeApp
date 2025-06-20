@@ -112,7 +112,31 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="SN7-IJ-Hr5">
+                                        <rect key="frame" x="0.0" y="317" width="393" height="32"/>
+                                        <segments>
+                                            <segment title="DAILY"/>
+                                            <segment title="Weekly"/>
+                                            <segment title="Mounthly"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="didChangePeriod:" destination="YIE-Bz-KPq" eventType="valueChanged" id="t8J-QU-nMr"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="9cA-uI-PWm">
+                                        <rect key="frame" x="8" y="356" width="377" height="206"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="SN7-IJ-Hr5" firstAttribute="leading" secondItem="0ue-u0-Ogp" secondAttribute="leading" id="F5Z-hr-vuk"/>
+                                    <constraint firstAttribute="trailing" secondItem="SN7-IJ-Hr5" secondAttribute="trailing" id="Puy-2x-5j5"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="5Sd-k1-2Gy"/>
@@ -143,13 +167,14 @@
                         <outlet property="favoriteMenu" destination="4D1-jT-IhL" id="sn6-QW-mzR"/>
                         <outlet property="horoscopeDatesLabel" destination="t45-iZ-6fg" id="hKI-IZ-vzp"/>
                         <outlet property="horoscopeImageView" destination="LRu-0X-I6w" id="sMI-2r-v1L"/>
+                        <outlet property="horoscopeLuckTextView" destination="9cA-uI-PWm" id="BNj-nP-KNw"/>
                         <outlet property="horoscopeNameLabel" destination="ZhE-Dw-rYA" id="edG-UX-fhh"/>
                         <outlet property="share" destination="col-ys-TN4" id="c9v-ke-JgS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Wc-JE-Q8a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2390" y="4"/>
+            <point key="canvasLocation" x="2388.5496183206105" y="3.5211267605633805"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ha1-6e-vHO">
@@ -179,6 +204,9 @@
         <image name="heart" catalog="system" width="128" height="107"/>
         <image name="heart.fill" catalog="system" width="128" height="107"/>
         <image name="square.and.arrow.up" catalog="system" width="110" height="128"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

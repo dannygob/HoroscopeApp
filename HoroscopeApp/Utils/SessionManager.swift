@@ -1,23 +1,21 @@
-//
-//  Untitled.swift
-//  HoroscopeApp
-//
-//  Created by Tardes on 18/6/25.
-//
-
 import Foundation
 
 class SessionManager {
-
-    static func setFavoriteHoroscope(id: String){
-    UserDefaults.standard.set(id, forKey: "FAVORITE_HOROSCOPE")
-}
-
- static func getFavoriteHoroscope() -> String? {
-    return UserDefaults.standard.string(forKey: "FAVORITE_HOROSCOPE") ?? ""
-}
+    private static let favoriteKey = "favoriteHoroscopeId"
+    
+    static func setFavoriteHoroscope(id: String) {
+        UserDefaults.standard.set(id, forKey: favoriteKey)
+    }
+    
+    static func removeFavoriteHoroscope(id: String) {
+        // Verificamos si es el mismo que está guardado
+        let current = UserDefaults.standard.string(forKey: favoriteKey)
+        if current == id {
+            UserDefaults.standard.removeObject(forKey: favoriteKey)
+        }
+    }
 
     static func isFavoriteHoroscope(id: String) -> Bool {
-    return getFavoriteHoroscope() == id
-}
+        return UserDefaults.standard.string(forKey: favoriteKey) == id
+    }
 }
